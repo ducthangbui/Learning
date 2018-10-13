@@ -1,0 +1,169 @@
+/*
+	Cay nhi nhan !
+	
+	1, khoi tao cay nhi phan
+	2, tao moi mot nut
+	3, them mot nut vao cay
+			a, trai nhat
+			b, phai nhat
+	4, duyet qua cac nut tren cay nhi phan
+	5, tinh chieu cao cua cay
+	6, tinh so nut cua cay
+	7, huy mot nut tren cay
+
+
+
+
+*/
+#include<iostream>
+#include<queue>
+using namespace std;
+int chieucao=0,sonut=0;
+typedef struct node 
+{
+	int info;
+	node *right,*left;
+	node()
+	{
+		right=left=NULL;
+	}
+} *tree;
+
+void Init(tree &x) {x=NULL;}//khoi tao
+void Root(tree &x,int k)
+{
+	x=new node;
+	x->info=k;
+}
+node *Getnode(int x=0)
+{
+	tree q;
+	q=new node ;
+	q->info=x;
+	return q;
+}
+int Empty(tree &x)
+{
+	if(x==NULL) return 1;
+	return 0;
+}
+void Add_Max_Left(tree &x,int n)
+{
+	tree p=x,q;
+	q=Getnode(n);
+	if(p==NULL){x=q;return;}	
+	while(p->left) p=p->left;
+	p->left=q;
+}
+void Add_Max_Right(tree &x,int n)
+{
+	tree p=x,q;
+	q=Getnode(n);
+	if(p==NULL) {x=q;return;}
+	while(p->right) p=p->right;
+	p->right=q;
+}
+void NLR(tree &x)
+{
+	if(x)cout<<x->info<<' ';
+	if(x->left) NLR(x->left);
+	if(x->right) NLR(x->right);
+}
+void LNR(tree &x)
+{
+	if(x->left) LNR(x->left);
+	if(x)cout<<x->info<<' ';
+	if(x->right) LNR(x->right);
+}
+void LRN(tree &x)
+{
+	if(x->left) LRN(x->left);
+	if(x->right) LRN(x->right);
+	if(x)cout<<x->info<<' ';
+}
+void  UpChieu_cao(tree &x,int h=0)
+{
+	if(x->left!=NULL) 
+		UpChieu_cao(x->left,h+1);
+	if(x->right!=NULL)
+		UpChieu_cao(x->right,h+1);
+	if(x->right==NULL&&x->left==NULL)
+		if(h>chieucao) chieucao=h;	
+}
+void UpNut(tree &x)
+{
+	sonut++;
+	if(x->right) UpNut(x->right);
+	if(x->left) UpNut(x->left);
+}
+tree Search(tree &x,int k)
+{
+	queue <tree> T;
+	tree q=x;
+	if(x==NULL) return x;
+	T.push(q);
+	while(!T.empty())
+	{
+		q=T.front();
+		if(q->info==k) return q;
+		T.pop();
+		if(q->left) 	T.push(q->left);
+		if(q->right) 	T.push(q->right);
+	}
+	return NULL;
+}
+tree Search_Parent(tree &x,int k)
+{
+	queue <tree> T;
+	tree q=x;
+	if(x==NULL) return x;
+	T.push(q);
+	while(!T.empty())
+	{
+		q=T.front();
+		if(q->info==k) return q;
+		T.pop();
+		if(q->left) 	{if(q->left->info==k) return q;T.push(q->left);}
+		if(q->right) 	{if(q->right->info==k) return q;T.push(q->right);}
+	}
+	return NULL;
+}
+void Del(tree &x,int k)
+{
+	tree q=x,p=Search(x,k);
+	if(p==NULL) return ;
+	while(q->left!=NULL) q=q->left;
+	if(q->info!=k) 
+		{int a=p->info;p->info=q->info;q->info=a;}//doi cho 2 khoa' 
+	tree m=Search_Parent(x,k);
+	tree xx=m->left;
+	m->left=NULL;
+	delete xx;
+}
+
+main()
+{
+	tree q;
+	Init(q);
+	Add_Max_Right(q,1);
+	Add_Max_Right(q,2);
+	Add_Max_Left(q,6);
+	Add_Max_Left(q,6);
+	Add_Max_Left(q,6);
+	Add_Max_Left(q,6);
+	Add_Max_Left(q,6);
+	Add_Max_Left(q,6);
+	Add_Max_Right(q,3);
+	Add_Max_Right(q,4);
+	Add_Max_Right(q,5);
+	cout<<Search(q,5)->info;
+	Del(q,7);
+	cout<<Search(q,5)->info;
+	
+	
+	
+	//cout<<chieucao<<endl;
+	//cout<<sonut<<endl;
+	//LNR(q);
+	
+}

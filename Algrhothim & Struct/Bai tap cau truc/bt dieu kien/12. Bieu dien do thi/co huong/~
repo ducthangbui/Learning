@@ -1,0 +1,8 @@
+#include<iostream>
+using namespace std;
+main()
+{
+	float f=0.123456789;
+	
+	
+}
