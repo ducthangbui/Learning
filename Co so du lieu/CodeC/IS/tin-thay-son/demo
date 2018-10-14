@@ -1,0 +1,27 @@
+#include<stdio.h>
+int timucln(int a,int b)
+{
+while (b!=0)
+ {
+   int tmp=b;
+   b=a%b;
+   a=tmp;
+ }
+return a;
+}
+int UCLN(int n)
+{
+ int i,a;
+printf("Nhap so:");
+scanf("%d",&a);
+if (n>1) return timucln(a,UCLN(n-1));
+else return a;
+
+}
+main()
+{
+int n;
+printf("Nhap vao bnhiu so? ");
+scanf("%d",&n);
+printf("UCLN:%d",UCLN(n));
+}

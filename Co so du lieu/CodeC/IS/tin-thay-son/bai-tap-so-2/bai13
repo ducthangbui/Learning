@@ -1,0 +1,16 @@
+#include<stdio.h>
+main()
+{
+int n,m=0;
+printf("Nhap vao so n:");
+scanf("%d",&n);
+int tmp=n;
+while (n!=0)
+{
+
+m=m*10+n%10;
+n=n/10;
+}
+if (m==tmp) printf ("So thuan nghich");
+else ("No");
+}

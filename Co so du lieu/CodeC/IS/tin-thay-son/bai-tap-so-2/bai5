@@ -1,0 +1,15 @@
+#include<stdio.h>
+main()
+{
+int s=0,i,j,n;
+int tich=1;
+scanf("%d",&n);
+for (i=1;i<=n;i++)
+{
+   
+   for (j=i;j<=i;j++)
+   tich=tich*j;
+    s=s+tich;
+}
+printf("%d",s);
+}

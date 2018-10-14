@@ -1,0 +1,24 @@
+#include<stdio.h>
+#include<math.h>
+main()
+{
+int i,m,n,j;
+//int dem=0;
+printf("Nhap vao so m:");
+scanf("%d",&m);
+printf("Nhap vao so n:");
+scanf("%d",&n);
+if (m>n) printf ("Nhap sai");
+else
+{
+int dem=0;
+for (i=1;i<=n;i++)
+ { 
+   for (j=m;j<=n;j++)
+     { if (sqrt(i)==j) printf ("Cac so chinh phuong la:%3d\n",i),
+       dem++;
+     }
+ }
+        printf("\nSo cac so chinh phuong là:%d",dem);
+ }
+}

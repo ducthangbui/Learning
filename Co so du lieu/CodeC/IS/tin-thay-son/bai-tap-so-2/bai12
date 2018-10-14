@@ -1,0 +1,15 @@
+#include<stdio.h>
+main()
+{
+int i,n;
+int a[100];
+printf("In ra so Fibonaxi thu:");
+scanf("%d",&n);
+a[0]=1,a[1]=1;
+//for (i=0;i<=n;i++)
+//scanf("%d",&a[i]);
+for (i=2;i<=n;i++)
+a[i]=a[i-1]+a[i-2];
+//printf("%5d",a[i]=a[i-1]+a[i-2]);
+printf("%d",a[n]);
+}
