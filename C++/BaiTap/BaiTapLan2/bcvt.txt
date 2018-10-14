@@ -1,0 +1,16 @@
+5
+1.PTIT la gi ?
+A.BCVT B.Ha noi C.DH Quoc Gia D.DH Ha Noi
+A
+2.PTIT co may toa nha ?
+A.2 B.3 C.4 D.5
+B
+3.PTIT co may khoa ?
+A.4 B.5 C.6 D.7
+B
+4.Khoa nao co nhieu nu nhat ?
+A.CNTT B.PT C.Ke toan D.VT
+C
+5.PTIT thanh lap duoc bao nhieu nam ?
+A.60 B.70 C.80 D.90
+A

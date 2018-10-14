@@ -1,0 +1,62 @@
+Danh sach sinh vien vua nhap la:
+Ten:Bui Duc Thang
+Gioi tinh:nam
+Diem:9
+Ten:Pham Nhu Thao
+Gioi tinh:nam
+Diem:10
+Ten:nguyen Huyen trang
+Gioi tinh:nu
+Diem:9
+Danh sach sinh vien sau khi them la:
+Ten:Bui Duc Thang
+Gioi tinh:nam
+Diem:9
+Ten:Nguyen Thu Hang
+Gioi tinh:nu
+Diem:9
+Ten:Pham Nhu Thao
+Gioi tinh:nam
+Diem:10
+Ten:nguyen Huyen trang
+Gioi tinh:nu
+Diem:9
+Danh sach sinh vien sau khi xoa la:
+Ten:Bui Duc Thang
+Gioi tinh:nam
+Diem:9
+Ten:Pham Nhu Thao
+Gioi tinh:nam
+Diem:10
+Ten:nguyen Huyen trang
+Gioi tinh:nu
+Diem:9
+Danh sach sinh vien sap xep theo diem giam dan la:
+Ten:Pham Nhu Thao
+Gioi tinh:nam
+Diem:10
+Ten:Bui Duc Thang
+Gioi tinh:nam
+Diem:9
+Ten:nguyen Huyen trang
+Gioi tinh:nu
+Diem:9
+Danh sach sinh vien sau khi sua la:
+Ten:Pham Nhu Thao
+Gioi tinh:nam
+Diem:10
+Ten:Bui Duc Thang
+Gioi tinh:nam
+Diem:10
+Ten:nguyen Huyen trang
+Gioi tinh:nu
+Diem:9
+
+Danh sach sinh vien hien thi theo gioi tinh la:
+
+Ho ten:Pham Nhu Thao
+Gioi tinh:nam
+Diem:10
+Ho ten:Bui Duc Thang
+Gioi tinh:nam
+Diem:10

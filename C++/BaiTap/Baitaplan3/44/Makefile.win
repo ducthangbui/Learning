@@ -1,0 +1,41 @@
+# Project: 44
+# Makefile created by Dev-C++ 5.3.0.4
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = main.o nguoi.o khachhang.o phong.o bangsapxep.o $(RES)
+LINKOBJ  = main.o nguoi.o khachhang.o phong.o bangsapxep.o $(RES)
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW32/lib" -static-libstdc++ -static-libgcc -g3
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/include"
+BIN      = 44.exe
+CXXFLAGS = $(CXXINCS)  -g3
+CFLAGS   = $(INCS)  -g3
+RM       = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+nguoi.o: nguoi.cpp
+	$(CPP) -c nguoi.cpp -o nguoi.o $(CXXFLAGS)
+
+khachhang.o: khachhang.cpp
+	$(CPP) -c khachhang.cpp -o khachhang.o $(CXXFLAGS)
+
+phong.o: phong.cpp
+	$(CPP) -c phong.cpp -o phong.o $(CXXFLAGS)
+
+bangsapxep.o: bangsapxep.cpp
+	$(CPP) -c bangsapxep.cpp -o bangsapxep.o $(CXXFLAGS)

@@ -1,0 +1,62 @@
+# Project: bai36
+# Makefile created by Dev-C++ 5.3.0.4
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = main.o bai36.o bai36_b.o bai36_c.o menu.o bai36d.o bai36e.o bai36g.o bai36g2.o bai36h.o bai36i.o bai36p.o $(RES)
+LINKOBJ  = main.o bai36.o bai36_b.o bai36_c.o menu.o bai36d.o bai36e.o bai36g.o bai36g2.o bai36h.o bai36i.o bai36p.o $(RES)
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW32/lib" -static-libstdc++ -static-libgcc -g3
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/include"
+BIN      = bai36.exe
+CXXFLAGS = $(CXXINCS)  -g3
+CFLAGS   = $(INCS)  -g3
+RM       = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+bai36.o: bai36.cpp
+	$(CPP) -c bai36.cpp -o bai36.o $(CXXFLAGS)
+
+bai36_b.o: bai36_b.cpp
+	$(CPP) -c bai36_b.cpp -o bai36_b.o $(CXXFLAGS)
+
+bai36_c.o: bai36_c.cpp
+	$(CPP) -c bai36_c.cpp -o bai36_c.o $(CXXFLAGS)
+
+menu.o: menu.cpp
+	$(CPP) -c menu.cpp -o menu.o $(CXXFLAGS)
+
+bai36d.o: bai36d.cpp
+	$(CPP) -c bai36d.cpp -o bai36d.o $(CXXFLAGS)
+
+bai36e.o: bai36e.cpp
+	$(CPP) -c bai36e.cpp -o bai36e.o $(CXXFLAGS)
+
+bai36g.o: bai36g.cpp
+	$(CPP) -c bai36g.cpp -o bai36g.o $(CXXFLAGS)
+
+bai36g2.o: bai36g2.cpp
+	$(CPP) -c bai36g2.cpp -o bai36g2.o $(CXXFLAGS)
+
+bai36h.o: bai36h.cpp
+	$(CPP) -c bai36h.cpp -o bai36h.o $(CXXFLAGS)
+
+bai36i.o: bai36i.cpp
+	$(CPP) -c bai36i.cpp -o bai36i.o $(CXXFLAGS)
+
+bai36p.o: bai36p.cpp
+	$(CPP) -c bai36p.cpp -o bai36p.o $(CXXFLAGS)
